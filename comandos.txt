@@ -1,0 +1,692 @@
+man ”comando”: muestra manual del comando que le indiquemos
+	-f esta opción hace que man muestre la definición del comando en una sola línea.
+	-k la opción –k de la orden man busca en todas las descripciones, incluidos los nombres de las ordenes, las que incluyen las palabras especificadas.
+--help : da una ayuda de los comandos
+whatis ”comando”: muestra descripción del comando
+whereis ”comando”: muestra donde está el comando
+
+man hier: Nos permite ver la descripcion de todos los archivos
+
+ls: ver los ficheros de un directorio.
+ls -F : Permite diferenciar los directorios, los archivos ejecutables y los links de los archivos comunes:.
+ls -l : Formato largo, en orden alfabético por nombre de archivo.
+ls -a : mostrar los ficheros ocultos.
+ls -la: mostrar todos los ficheros con mas informacion.
+ls -d : muestra el nombre y otros datos del directorio ( ls –d */).
+ls *[0-9]* : mostrar los ficheros y carpetas que contienen números.
+ls –l | less : Con este ejemplo, la salida del comando ls se convierte en la entrada del comando less.
+ls -al | more : la salida de un listado de ficheros y directorios cuando esta es muy larga.
+ls | grep .extension : Listar todos los archivos segun la extension.
+ls -a | grep "^\." : Muestra solamente solo los archivos ocultos en dicha carpeta
+ls | grep "^[patron]*" : Busca los archivos cuyo nombre comienzan con el patron sin importar el nombre ni la extension que posean
+ls - l /dev/sd*: identificar dispositivos
+ls -i: mostrar el inodo
+ls -lih: mostrar el inodo con formato largo
+
+
+find [camino] [condición] : Busca de archivos en la estructura de directorios
+find . -type d -empty: Buscar los directorios que esten vacios
+find . -type f -empty | find . -type f -size 0b : Buscar los archivos que esten vacios
+find . -type f -size 0b -print : Buscar los archivos que esten vacios y los imprime
+find . -type f -size 0b -print : Buscar los archivos que esten vacios y los elimina
+
+
+tree : muestra ficheros y carpetas como árbol iniciando por la raíz.
+
+
+cd /home : entrar en el directorio “home”.
+cd .. : retroceder un nivel.
+cd ../. . : retroceder 2 niveles.
+cd: ir al directorio raíz.
+cd ~user1 : ir al directorio user1.
+cd – : ir (regresar) al directorio anterior.
+pwd : mostrar el camino del directorio de trabajo
+
+
+mkdir dir1: crea una carpeta o directorio con nombre ‘dir1′. mkdir
+dir1 dir2: crea simultáneamente dos directorios a la vez mkdir -p /tmp/dir1/dir2: crea un árbol de directorios .
+mkdir -p dir1/dir2/{dir3,dir4}: crea primero el directorio dir1, dentro de este crea dir2 y dentro de dir2 crea dir3 y dir4 .
+mkdir /mnt/usb: Creamos dentro del directorio mnt un directorio donde vamos a montar nuestro pendrive
+
+cp file1 : copiar un fichero.
+cp file1 file2 : copiar dos ficheros al unísono.
+cp dir /* . : copiar todos los ficheros de un directorio dentro del directorio de trabajo actual.
+cp -a /tmp/dir1 . : copiar un directorio dentro del directorio actual de trabajo.
+cp -a dir1 : copiar un directorio.
+cp -a dir1 dir2 : copiar dos directorio al uníson
+
+rm -f file1 : borrar el fichero llamado ‘file1′.
+rmdir dir1 : borrar la carpeta llamada ‘dir1′.
+rm -rf dir1 : eliminar una carpeta llamada ‘dir1′ con su contenido de forma recursiva. (Si lo borro recursivo estoy diciendo que es con su contenido).
+rm -rf dir1 dir2 : borrar dos carpetas (directorios) con su contenido de forma recursiva.
+mv dir1 new_dir : renombrar o mover un fichero o carpeta (directorio).
+	Ejemplos
+	mv file.txt FILE.txt: renombro un archivo
+	mv file.txt /home/user/documents: muevo el archivo al directorio documents
+
+shutdown -h now: apagar el sistema (1).
+init 0: apagar el sistema (2).
+telinit 0: apagar el sistema (3).
+halt: apagar el sistema (4).
+shutdown -h hours:minutes &: apagado planificado del sistema.
+shutdown -c: cancelar un apagado planificado del sistema.
+shutdown -r now: reiniciar (1).
+reboot: reiniciar (2).
+logout: cerrar sesión
+
+ln -s file1 lnk1 : crear un enlace simbólico al fichero o directorio.
+ln file1 lnk1: crear un enlace físico o Duro a un fichero.
+
+
+
+
+cat file1: ver un fichero comenzando desde la primera hilera.
+cat file1 file2: Concatena los dos ficheros de texto en uno.
+cat > file : Permite crear un archivo y agregarle - Presiona CTRL+D para guardar los cambios
+cat -n file : Para ver el contenido de un archivo con su numero de linea
+cat file1 > file2: Copia del contenido del file1 al file2. Si el file2 no existe lo crea y si existe los contenidos previos se eliminan
+cat file1 >> file2: Copia del contenido del file1 al file2. Si el file2 no existe lo crea y si existe añade los contenidos al final
+cat file1 file2 > file3: Concatena los dos ficheros de texto en uno y se lo redirecciona al archivo file3.
+cat | sort [option] file1 > file2 : Ordena las lineas del file1 y las redirecciona al file2 
+cat -s file : Suprime lineas vacias repetidas
+cat -E file : Resalta el final de la línea.
+cat file | more : Si el archivo tiene mucho contenido y no cabe en la terminal.
+cat *.[extension] : Para mostrar el contenido de todos los archivos de texto en la carpeta.   
+cat /etc/passwd : Para mostrar los usuarios que tengan alguna sesion en el equipo
+cat /etc/group : Para mostrar todos los grupos de usuarios dentro de mi sistema
+
+
+tac file1: ver un fichero comenzando desde la última línea.
+more file1: ver el contenido de un fichero, pero paginado.
+less file1: Permite movimiento hacia adelante y atrás en el fichero
+head -2 file1: ver las dos primeras líneas de un fichero.
+tail -2 file1: ver las dos últimas líneas de un fichero.
+
+
+sort [opciones] fichero: Ordena alfabéticamente líneas de texto y las muestra
+	-b : Opcion de sort que ignora blancos al principio de línea
+	-f : Opcion de sort que indica que mayúsculas y minúsculas se tratan diferente
+	-r : Opcion de sort para orden inverso o descreciente
+	-m : Opcion de sort mezclar ficheros previamente ordenados
+	-n : Opcion de sort para ordenar numéricamente
+	-k n° : Opcion de sort para indicar por cual columna o campo vamos a realizar la ordenación.
+	-t : Opcion de sort para indicar otro delimitador de campo distinto al espacio en blanco
+	-u : Opcion de sort en el cual se puede ordenar este archivo y eliminar los duplicados.
+
+
+sort -t '@' [opcion] file: Ordena el archivo por la opcion y el separador de campo que utilizo, en este el @ arroba.
+sort file1 | uniq -c : Ordena y encuentra duplicados
+
+
+uniq file : Muestra las lineas omitiendo duplicados
+uniq -c file : Muestra el numero de lineas repetidas
+uniq -d file : Muestra solo las lineas duplicadas
+uniq -i file : Ignora las mayusculas y minusculas al comparar 
+uniq -u file : Muestra solo las lineas unicas del archivo
+uniq -u file1 output : Guarda la salida en otro archivo
+uniq -s 1 file1 :Para ignorar algunos caracteres al principio, puede usar el parámetro -s, pero debe especificar la cantidad de caracteres que debe ignorar
+
+ 
+
+grep [opciones] patrón [archivo] : Este comando permite encontrar líneas de texto que contengan un cadena o patrón dentro de uno o varios archivos y las imprime.
+grep "ejemplo" * listara las líneas que concuerden con la cadena ejemplo de "todos" los archivos del directorio actual.
+grep -i hola pp.txt considera idénticas las mayúsculas y minúscula en la cadena de búsqueda hola. (hola=HOLA=Hola=etc.).
+grep -ri "hola" ./ busca en los archivos del directorio y los subdirectorios la palabra hola. Mas mayúsculas = minúscula
+grep -v hola pp.txt lista las líneas que no contengan la cadena hola del archivo pp.txt
+grep -n hola pp.txt lista las líneas concordantes con la cadena hola del archivo pp.txt se mostrarán mas del número de línea.
+grep -w sobre pp.txt listara solamente aquellas líneas que contienen concordancias que forman palabras completas.
+grep -A 2 hola pp.txt muestra 2 líneas de contexto después de las que concuerden con el patrón hola.
+grep -B 2 hola pp.txt muestra 2 líneas de contexto antes de las que concuerden con el patrón hola.
+grep -f patron.txt pp.txt obtiene el patrón de fichero patron.txt y listara líneas concordantes del archivo pp.txt
+grep -s "ejemplo" * suprime los mensajes de error sobre ficheros que no existen o no se pueden leer.
+grep [123] pp.txt listara las líneas que contengan los números 1, 2 o 3
+grep '^L' pp.txt lista las líneas de pp.txt que comiencen la línea con el carácter L, el carácter ^ denota inicio de cadena.
+grep 'h$' pp.txt lista las líneas de pp.txt que terminen en h, el carácter $ denota fin de cadena.
+grep '\<pe' pp.txt muestra todas las líneas de pp.txt que contengan palabras que comiencen con la cadena pe.
+grep '\>pe' pp.txt muestra todas las líneas de pp.txt que contengan palabras que finalicen con la cadena pe.
+grep '^[^#]' pp.txt muestra pp.txt, ocultando las líneas que empiezan por # y las líneas vacías.
+egrep: ó grep –E : Se puede decir a egrep que busque varios objetivos dedos formas: colocándolos sobre líneas independientes como en fgrep, o
+	separándolos con la barra vertical o símbolo del cauce (|)	
+	$ egrep "pollo
+	> pavo
+	>cordero" recetas.txt
+fgrep: ó grep –F : Es similar a grep, pero con tres diferencias principales:
+	*Se puede buscar varios objetivos al mismo tiempo,
+	*No permite utilizar expresiones regulares para buscar patrones
+	*Es más rápido que grep. Cuando se busca en un archivo grande o en varios pequeños, la diferencia de velocidad puede ser significativa.
+	$ fgrep "pollo|pavo|cordero" recetas.txt
+grep $ prueba.txt : muestra todas las líneas de prueba.txt.
+grep ‘\$’ prueba.txt : muestra solo las líneas de prueba.txt que contienen el símbolo $.
+
+
+
+tree : Mostrar directorios y ficheros
+tree -d : Mostrar sólo los directorios
+tree -L nivel_a_mostrar : Mostrar directorios hasta un nivel de profundidad determinado
+tree -f : Mostrar los ficheros con su ruta completa
+
+
+
+who: Despliega que usuarios están trabajando en el sistema.
+	-a : Opcion de who que muestra todo.
+	-l : Opcion de who que muestra los procesos de login del sistema.
+	-b : Opcion de who que muestra la hora del último arranque del sistema.
+	-d : Opcion de who que muestra los procesos muertos.
+	-H : Opcion de who que muestra los encabezados de columna encima del salida.
+	-m : Opcion de who que es Igual que who am i.
+	-q : Opcion de who muestra sólo los nombres de usuario y la cuenta de usuarios activos.
+	-T,-w : Opcion de who que puede incluir el mensaje de estado del usuario en el salida.
+	-u : Opcion de who que muestra los usuarios conectados
+
+tty: muestra el nombre del fichero de la terminal conectada a la salida estandar.
+
+
+
+echo [OPCION]: Muestra el texto que se le indique (inclusive comodines), para posteriormente saltar una línea..
+	-e: Opcion de echo que habilita la interpretación de las secuencias de escape.
+
+		\a Emite la alerta (campana o sonido) del sistema  -- [echo]
+		\b Borra un carácter hacia atrás de donde esta la secuencia -- [echo]
+		\c Suprime todo hacia adelante de donde esta la secuencia -- [echo]
+		\n Nueva línea -- [echo]
+		\r Retorno de carro -- [echo]
+		\t Tabulador Horizontal -- [echo]
+		\v Tabulador Vertical (Sin retorno de carro) -- [echo]
+	-n: Opcion de echo que evita el salto de línea que posee el comando por defecto
+	-E: Opcion de echo que suprime la interpretación de las secuencias de escape.
+
+
+	Ejemplos:
+	$ echo Hoy es un buen día
+	Hoy es un buen día  --[echo]
+	$ echo –E “Estas son las opciones de escape: \a\b\c\n\r\t\v”
+	Estas son las opciones de escape: \a\b\c\n\r\t\v  --[echo]
+	$ echo –e “Primero\nSegundo”  --[echo]
+	Primero  --[echo]
+	Segundo  --[echo]
+	$ echo –e “Uno\tDos”  --[echo]
+	Uno Dos  --[echo]
+	$ echo –e “Me parece que esto \cque viene esta de mas”  --[echo]
+	Me parece que esto	--[echo] 
+
+----->[Variables de entorno]echo $PATH : Muestra la ubicacion del archivo
+----->[Variables de entorno]echo $PWD : Muestra la posicion actual
+----->[Variables de entorno]echo $SHELL : Muestra la ubicacion de la shell -> /bin/bash --version muestra la version de la shell
+----->[Variables de entorno]LOGNAME: contiene el nombre de usuario
+----->[Variables de entorno]HOSTNAME: contiene el nombre de la máquina
+----->[Variables de entorno]MACHTYPE: sistema hardware
+----->[Variables de entorno]PS1: secuencia de caracteres mostrados antes del prompt
+----->[Variables de entorno]\t hora
+----->[Variables de entorno]\d fecha
+----->[Variables de entorno]\w directorio actual
+----->[Variables de entorno]\W última parte del directorio actual
+----->[Variables de entorno]\u nombre de usuario
+----->[Variables de entorno]\$ caracter del prompt
+----->[Variables de entorno]UID: contiene el id del usuario que no puede ser modificado
+----->[Variables de entorno]SHLVL: contiene el nivel de anidamiento de la shell
+
+
+
+----->[bash]: Ejemplo: Si nuestro script se encuentra en /home/usuario1, y deseamos añadir este camino a la variable path por defecto, escribimos:
+----->[bash]export PATH=$PATH:/home/usuario1: Si queremos añadir el camino al final del PATH
+----->[bash]export PATH=/home/usuario1/:$PATH Si queremos añadir el camino al inicio del PATH.
+----->[bash]echo 'export PATH=$PATH:/home/usuario1' >> /home/usuario1/.bashrc  : Configurar el path de forma pemanente
+----->[bash-exit]El comando exit se puede utilizar para finalizar la ejecución de un script o para devolver una valor, el cuál estará disponible al proceso padre del script.
+----->[bash-exit]Cuando un script termina con exit sin parámetros, el estado de salida será el del último comando ejecutado en el script
+----->[bash-exit]Cuando se ejecuta el script con el comando exit con parámetros, la sintaxis es: exit nnn ; Donde nnn=0-255 y el estado de salida es nnn
+
+
+[bash-EXPRESIONES]-eq Compara si son iguales dos cadenas. Si lo son devuelve un true.
+[bash-EXPRESIONES]-ne Compara si son iguales dos cadenas. Si no lo son devuelve un true.
+[bash-EXPRESIONES]-gt Compara si la cadena de la izquierda es mayor que la derecha. Si es así devuelve un true.
+[bash-EXPRESIONES]-lt Compara si la cadena de la izquierda es menor que la derecha. Si es así devuelve un true.
+[bash-EXPRESIONES]-ge Compara si la cadena de la izquierda es mayor o igual que la derecha. Si es así devuelve un true.
+[bash-EXPRESIONES]-le Compara si la cadena de la izquierda es menor o igual que la derecha. Si es así devolverá un true.
+[bash-EXPRESIONES] [ s1 = s2 ] (true si s1 es igual a s2, sino false)
+[bash-EXPRESIONES] [ s1 != s2 ] (true si s1 no es igual a s2, sino false)
+[bash-EXPRESIONES] [ s1 ] (true si s1 no está vacía, sino false)
+[bash-EXPRESIONES] [ -n s1 ] (true si s1 tiene longitud mayor que 0, sino false)
+[bash-EXPRESIONES] [ -z s2 ] (true si s2 tiene longitud 0, sino false)
+[bash-EXPRESIONES] -d verifica si el path dado es un directorio
+[bash-EXPRESIONES] -f verifica si el path dado es un archivo
+[bash-EXPRESIONES] -s verifica si el path dado en un link simbólico
+[bash-EXPRESIONES] -e verifica si el fichero existe
+[bash-EXPRESIONES] -s verifica si el fichero tiene un tamaño mayor a 0
+[bash-EXPRESIONES] -r verifica si el fichero tiene permiso de lectura
+[bash-EXPRESIONES] -w verifica si el fichero tiene permiso de escritura
+[bash-EXPRESIONES] -x verifica si el fichero tiene permiso de ejecución
+[bash-EXPRESIONES] !NOT
+[bash-EXPRESIONES] -a AND <> &&
+[bash-EXPRESIONES] -o OR <> ||
+
+[bash - Depuración]Bash ofrece dos formas de depurar los shell scripts
+[bash - Depuración]-v : muestra cada línea completa del script antes de ser ejecutada
+[bash - Depuración]-x : muestra cada línea abreviada del script antes de ser ejecutada
+[bash - Depuración]Uso: #!/bin/bash –v, o #!/bin/bash –x
+
+
+read: nos permite solicitar un valor de entrada para almacenarlo en una variable
+read –s: (no hace echo de la entrada)
+read –p: “mensaje” (muestra un mensaje)
+read –ps: Muestra el “mensaje” pero no lo que teclea el usuario
+read –n: No retorna el carro El cursor queda en el mismo renglón
+read –nN: (acepta sólo N caracteres de entrada)
+read –tT: (acepta una entrada por un tiempo máximo de T segundos)
+
+[sh]Comando export: El comando export pone una variable en el entorno de forma que sea accesible por los procesos hijos. Si el proceso hijo modifica el valor de la variable x, no modificará el valor original del proceso padre.
+[sh]suma=$(($x + $y))
+[sh]resta=$(($x - $y))
+[sh]mul=$(($x * $y))
+[sh]div=$(($x / $y))
+[sh]mod=$(($x % $y))
+[sh]Para extraer todos los elementos se utiliza un asterisco: echo ${array[*]}
+[sh]Para saber cuántos elementos hay en el array: echo ${#array[*]}
+[sh]Si en un script deseo cagar la variable Lista con el contenido que muestra por pantalla el comando ls: $LISTA=$(ls)
+
+history: El comando history nos muestra en pantalla el historial de comandos escritos por el usuario en la terminal.
+history -d [NUMERO] : Podemos borrar un elemento de history de manera temporal .
+history -c : Podremos borrar todo el contenido de history para la sesión actual. 
+history -w : Si queremos borrar permanentemente el contenido de history, debemos borrar el archivo .bash_history, lo tendremos que hacer a través del argumento -w, justo después de borrar el history con el argumento –c
+history | head -n 10 : Mostrar los 10 primeros comandos registrados en memoria
+history | tail -n 10 : Mostrar los 10 ultimos comandos registrados en memoria
+
+
+alias: Ver alias creados en nuestro equipo
+alias proyecto=’cd /home/luis/facultad/Proyecto_Final/tesis' : Creando un Alias temporales.
+nano /home/usuario/.bashrc : Para definir un alias permanente, debemos agregarlo en el archivo ~/.bashrc.
+unalias [nombre del alias] : Quitando un Alias temporal.
+unalias -a : Si deseamos quitar todos los alias de la sesión actual.
+echo "alias name='cd /home/username/directory'" >> ~/.bash_aliases  Otra forma de crear un alias de forma permanente
+
+
+env: Muestra todas las variables del ambiente
+	--help: Opcion de env que muestra un mensaje de uso en la salida estándar y termina sin errores.
+	-u, --unset nombre: Opcion de env que elimina la variable nombre del entorno, si es que existía allí.
+	-0, : Opcion de env que elimina la variable nombre del entorno, si es que existía allí.
+	-, -i, --ignore-environment: Opcion de env que empieza con un entorno vacío, ignorando el heredado.
+	--versión : Opcion de env que muestra información de la versión en la salida estándar y termina sin errores.
+
+
+wc : El comando wc sirve para hacer un conteo de bytes, caracteres, lineas y palabras de un archivo(s). Y si se pide información de varios archivos da además un total de los parámetros.
+	-c: --bytes : Opcion de wc que imprime la cantidad de bytes.
+	-m: --chars : Opcion de wc que imprime la cantidad de caracteres.
+	-l: --lines : Opcion de wc que imprime la cantidad de lineas.
+	-L: --max-line-length : Opcion de wc que imprime la longitud de la linea más larga.
+	-w: --words : Opcion de wc que imprime el número de palabras.
+	--help : Opcion de wc que muestra esta ayuda y sale.
+	--versión : Opcion de wc que muestra la información de la versión y sale.
+
+xargs : lee información de la entrada estándar y ejecuta un comando una o más veces con los elementos leídos.
+	-p. Usar esta opción hará que xargs imprima un aviso de confirmación con la acción que va a realizar:los elementos leídos. -- [xargs]
+	
+	Ejemplo:
+	find . -type f -size 0b | xargs -p rm : Busca los archivos vacios y pregunta si desea eliminarlos ante de ejecutar la accion
+
+
+tee [opciones] file : Redirecciona la salida estándar de una orden a uno o a más archivos, como también a la salida estándar. Se usa cuando necesitamos ver la salida de un comando en pantalla (standar output) y también guardar dicha salida al mimo tiempo en un fichero
+	-a: Inserta los datos al final del archivo, no sobrescribe. -- [tee]	
+
+
+neofetch: es una herramienta que muestra información sobre tu sistema - como la versión del kernel, el shell y el hardware- junto a un logotipo ASCII de tu distribución de Linux
+
+
+diff: El comando diff es un comando útil. Supongamos que tienes 2 archivos, que contienen casi la misma información, pero quieres pero a simple vista no puedes encontrar la diferencia entre ellos, en este caso diff procesará los archivo y te mostrara la diferencia.
+	-s : Opcion de diff que muestra solo cuando 2 ficheros son idénticos.
+	-q : Opcion de diff que muestra solo los ficheros que difieren de un directorio a otro.
+	-r : Opcion de diff que comprueba los directorios de forma recursiva.
+	--ignore-file-namecase : Opcion de diff que ignora las diferencias entre mayúsculas y minúsculas en entre nombres de fichero.
+	-i : Opcion de diff que ignora las diferencias entre mayúsculas y minúsculas en el contenido de los ficheros.
+	--supress-commonlines : Opcion de diff que cuando se comparan 2 ficheros de texto únicamente se muestran las líneas que son diferentes.
+	-b : Opcion de diff para hacer una comparación omitiendo los espacios en blanco
+
+
+du: calculará el tamaño de un directorio en su conjunto
+du -h almacen: La opción -h mostrará una notación legible por los humanos
+du -a almacen: muestra el tamaño de cada archivo en el directorio especificado con la opción -a
+
+
+chmod [opción] [a,u,g,o] [+,-] [r,w,x] <archivos> : Asigna los permisos de escritura, lectura y ejecución
+	-f : Opcion de chmod para forzar
+	-R Recursivo: Opcion de chmod para cuando el argumento es un subdirectorio, se modifican los permisos del directorio, de todos los archivos de dicho directorio y se continúa el cambio recursivamente hacia abajo en la estructura
+	a = all :para todos	--[chmod]
+	u = user : para el “propietario” --[chmod] 
+	g = group : para el grupo  --[chmod]
+	o = other : otros usuarios  --[chmod]
+	+ = dar permisos  --[chmod]
+	- = quitar permisos --[chmod]
+
+	Ejemplos:
+	chmod a+r luis : Da a todos los usuarios acceso de lectura al archivo luis.
+	chmod og-x manuel : Quita permisos de ejecución de manuel a otros usuarios y al grupo
+	chmod u+rwx maria : Permite al propietario leer, escribir y ejecutar el archivo maría.
+	chmod o-rwx andrea : Quita permisos de lectura, escritura y ejecución del archivo andrea a otros usuarios
+chmod a-rwx archiv*: Asigna todos los permisos a todos a los archivos que comiencen con archiv sin importar la terminacion
+
+
+chown : Maneja el dueño del archivo o directorio
+	Ejemplos:
+	Asignar el usuario y grupo: chown opción usuario:grupo archivo
+	Modificar solo el grupo: chown opción :grupo archivo
+	Modificar solo el usuario: chown opción usuario: archivo
+
+
+chgrp [opciones] nuevo_grupo nombre_de_archivo/directorio : Asigna el grupo
+	-R : Opcion de chgrp que cambia el permiso en archivos que estén en subdirectorios del directorio en el que estés en ese momento.
+	-c : Opcion de chgrp que cambia el permiso para cada archivo.
+	-f : Opcion de chgrp para forzar. No informar de errores.
+
+
+su [opciones] usuario: El nombre substitute user (usuario substituto) ó superuser (super-usuario, es decir, root o administrador) ya que se utiliza para adoptar el rol de administrador del sistema.
+	– , – l : Opcion de su en el cual se hace login de la misma forma que si se logeara en la consola, cargando todos los ficheros de configuración de su perfil.
+		- : para root  --[su]
+		- usuario: para otro usuario distinto de root  --[su]
+	– p: Opcion de su en el cual no reinicia las variables de entorno y preserva la consola.
+	– c: Opcion de su que ejecuta un comando como root, ejem: su –l ‘ –c ifconfig’ pero no se logea como el nuevo usuario, vuelve al anterior
+
+
+
+stat [option] file : Muestra el estado del archivo o el sistema de archivos
+	-f: Opcio de stat que muestra el estado del sistema de archivos en lugar del estado del archivo.
+	-c : Opcion de stat en el cual especifica el formato de la informacion que nos devolvera por pantalla 
+		%a: Acceso en forma octal  --[stat]
+		%A: Acceso legible para el humano  --[stat]
+		%d: Numero del dispositivo en decimal  --[stat]
+		%D: Numero del dispositivo en hexadecimal  --[stat]
+		%b: Numero de bloques asignados  --[stat]
+		%B: Tamaño en bytes de cada bloque reportado por %b  --[stat]
+		%F: Tipo de archivo  --[stat]
+		%g: Id del grupo propietario  --[stat]
+		%G: Grupo del propietario  --[stat]
+		%n: Nombre del archivo  --[stat]
+		%s: Tamaño total en bytes  --[stat]
+
+stat -c "%a %A %n" file : Muestra los permisos del archivo de forma octal y normal, ademas del nombre del archivo
+stat -c "%a %A %n" *.[Extension] : Muestra los permisos de los archivos de forma octal y normal que tengan la misma extension, ademas del nombre de los archivos
+
+
+
+touch [opcion] file: Me permite crear un archivo
+	-a: Opcion de touch que cambia la fecha del archivo
+	-c: Opcion de touch que no crea el archivo
+	-m: Opcion de touch que cambia la fecha de modificacion del archivo
+
+umask - Comando que se utiliza para determinar el permiso de un archivo y directorios que se van a crear
+umask: Comando para consultar la mascara por omision en su forma octal.
+umask -S: Comando para consultar la mascara por omision en su forma simbolica.
+umask [numeros]: Configurar una nueva mascara
+	Ejemplo:
+	umask 027 -> Permisos para directorios: 750 , permisos para archivos: 639
+	echo "umask 027" >> ~/.bashrc, Agregar umask de forma permanente 
+
+SUID: Atributo que permite ejecutar un archivo de propiedad del root a cualquier usuario, se le suma un 4000 en octal y al 's' (se reemplaza la x por u para el grupo de usuario)
+	Ejemplo:
+	--Para sumar
+	sudo chmod u+s file.txt    --[SUID]
+	sudo chmod 4755 file.txt   --[SUID]
+	--Para quitar
+        sudo chmod u-s file.txt    --[SUID]
+        sudo chmod 0755 file.txt   --[SUID]
+
+
+SGID: Atributo que funciona de manera similar al SUID pero para el grupo del archivo, se le suma 2000 de forma octal y 'g' se le suma 's'
+	Ejemplo:
+	--Para sumar
+	sudo chmod g+s file.txt    --[SGID]
+	sudo chmod 2755 file.txt   --[SGID]
+        --Para restar
+        sudo chmod g-s file.txt    --[SGID]
+        sudo chmod 0755 file.txt   --[SGID]
+
+Sticky Bit: Este atributo se le asigna al directorio para que solo el propietario del archivo pueda renombrarlo o eliminarlo dentro del directorio que tienen acceso todos los usuarios, se le suma 1000 de forma octal y 't' al 'o'
+	Ejemplo:
+	--Para sumar
+	sudo chmod o+s /dir    --[Sticky Bit]
+	sudo chmod 1755 /dir     --[Sticky Bit]	
+	--Para restar
+	sudo chmod o-s /dir    --[Sticky Bit]
+        sudo chmod 0755 /dir     --[Sticky Bit]
+
+
+lsattr : Muestra los atributos del archivo
+	OPCIONES
+	-R: Opcion de lsattr que lista de forma recursiva los atributos de los directorios y su contenido
+	-a: Opcion de lsattr que lista todos los archivos en directorios, incluyendo archivos ocultos
+	-d: Opcion de lsattr que lista directorios en si mismos en vez de listar su contenido
+
+chattr: Permite cambiar los atributos del archivo o directorio
+	Operadores
+	+ Hace que se añadan los atributos especificados a los atributos existentes de un archivo    --[chattr]
+	- Hace que se eliminen los atributos especificados a los atributos existentes de un fichero
+	= Hace que se añadan los atributos especificados a los atributos existentes de un fichero
+	OPCIONES
+	i: Opcion de chattr que establece que el archivo sea inmutable.
+	s: Opcion de chattr que establece que los bloques utilizados en el disco duro son escritos con ceros, de modo que los datos no se puedan recuperar.
+	u: Opcion de chattr que cuando un fichero es eliminado sus contenidos son guardados pemitiendo recuperar el fichero con herramientas para tal fin.
+	a: Opcion de chattr que establece que un archivo solo se pueda abir en modo lectura
+	Ejemplo
+	chattr +a file.txt
+	chattr +i file.txt
+	chattr -s file.txt
+
+
+ps: Muestra una foto de los procesos actuales
+ps -a: muestra los procesos asociados a terminales y su estado
+ps -x : Muestra los procesos en un estilo BSD (sin controlar la [TTY]), es decir no están controlados por ninguna terminal.
+ps -ax: elimina la restricción de terminal
+ps -aux: muestra mas información sobre los procesos, incluido el usuario
+pstree: muestra un árbol de procesos
+pstree -p: muestra un árbol de procesos con PID
+pstree -sp [id]: muestra ascendencia para un proceso en particular
+
+top: Muestra el estado del sistema de manera dinámica (uso de la cpu, de la memoria, de los procesos en ejecución, etc), se usa para monitorizar.
+top -u <usuario>: muestra los procesos que están corriendo con ese usuario
+top -n <cantidad de refrescos>: Refrescar es la cantidad de iteraciones que va a tener el comando y luego se cerrara.
+top -d segundos: Donde segundos es el tiempo [segundos] que va a esperar top para recargar la lista de procesos.
+
+kill n [pid]:  permite que se puedan utilizar IDs de trabajo en lugar de IDs de proceso y permite matar procesos si se ha alcanzado el límite de procesos que se pueden crear.
+kill -l: lista los nombres de señales
+kill ­9 [pid]: Terminar un proceso por las malas
+kill ­15 [pid]: Terminar un proceso por las buenas
+
+
+lsblk: Lista información de los dispositivos de bloque.
+	-f: Opcion de lsblk que muestra una información amplia
+	-m: Opcion de lsblk que muestra además información de sus propietarios y de los permisos de escritura lectura
+	-p: Opcion de lsblk que muestra las rutas completas de los dispositivos   
+
+sfdisk: Nos permite ver tanto los volúmenes físicos como los lógicos, además nos ofrece información como los cilindros (inicio y final), sectores, tamaño y tipo
+	-l: Opcion de sfdisk para listar la información
+
+
+fsck [option] device: Se utiliza para ante alguna inconsistencia del sistema de archivos para corregir errores del sistema
+	Ejemplos:
+	fsck.ext4, fsck.ext3, fsck.reiserfs /dev/...	-> El fs no debe estar montado
+	
+
+
+fdisk /dev/sdb*: Esta herramienta permite realizar diferentes acciones sobre el disco duro
+	OPCIONES:
+	d: Opcion de fdisk que borra una partición
+	F: Opcion de fdisk que lista el espacio libre no particionado
+	l: Opcion de fdisk que lista los tipos de particiones conocidos
+	n: Opcion de fdisk que añade una nueva partición
+	p: Opcion de fdisk que muestra la tabla de particiones
+	t: Opcion de fdisk que cambia el tipo de una partición
+	v: Opcion de fdisk que verifica la tabla de particiones
+	i: Opcion de fdisk que imprime información sobre una partición
+	m: Opcion de fdisk que muestra este menú
+	x: Opcion de fdisk que funciones adicionales (sólo para usuarios avanzados)
+	I: Opcion de fdisk que carga la estructura del disco de un fichero de script sfdisk
+	O: Opcion de fdisk que vuelca la estructura del disco a un fichero de script sfdisk
+	w: Opcion de fdisk que escribe la tabla en el disco y sale
+	q: Opcion de fdisk que sale sin guardar los cambios
+	g: Opcion de fdisk que crea una nueva tabla de particiones GPT vacía
+	G: Opcion de fdisk que crea una nueva tabla de particiones SGI (IRIX) vacía
+	o: Opcion de fdisk que crea una nueva tabla de particiones DOS vacía
+	s: Opcion de fdisk que crea una nueva tabla de particiones Sun vacía
+
+mkfs [opciones] [-t tipo fs-opciones] dispositivo [size]: Nos permite formatear una particion
+	Ejemplo: Formatear la segunda partición del disco sdb: mkfs -t ext4 /dev/sdb2 || mkfs.ext4 /dev/sdb2
+
+
+mount -t [Sistema-de-Archivos] [ruta-del-dispositivo] [punto-de-montaje]: Nos permite realizar un montaje de un dispositivo de forma temporal
+	Ejemplo:
+	mount -t vfat /dev/sdc1 /mnt/usb: Ahora ya tenemos montado muestro pendrive en el directorio /mnt/usb
+	mount -ro -t /dev/sdc1 /mnt/usb: Montamos un pendrive para solo lectura
+mount -l: Muestra todos los dispositivos montados en el sistema
+
+#Para montar de forma permanete se edita el archivo /etc/fstab
+#[mount | /etc/fstab] UUID=[UUID]
+#[mount | /etc/fstab] <file system> <mount point> <type> <options> <dump> <pass> 	 
+#[mount | /etc/fstab]  /dev/sdb1     /mnt/pruebas  ext4   defaults    0     0
+#[mount | /etc/fstab]		       OPCIONES:
+#[mount | /etc/fstab]			defaults: Esta opción es la unión de las opciones rw, suid, dev, exec, auto, nouser y async.
+#[mount | /etc/fstab]			rw: READ-WRITE. Con esto montamos la partición para que sea posible tanto leer como escribir en el dispositivo, 
+#[mount | /etc/fstab]			ro: READ-ONLY. Con esta opción hacemos que no se pueda escribir en el dispositivo, que tan solo se pueda leer.
+#[mount | /etc/fstab]			noexec: Impide la ejecución de cualquier archivo en el dispositivo en el que esta opción sea
+activada
+#[mount | /etc/fstab]			nodev: Con esto impedimos que puedan usarse nodos de dispositivo en el sistema de archivos, es decir, con esta opción impedimos que se interpreten los dispositivos especiales de bloques y de caracteres presentes en el dispositivo.
+#[mount | /etc/fstab]			dev: Al activar esta opción permitimos que puedan usarse nodos de dispositivo en el sistema de archivos, o, lo que es lo mismo, que se interpreten como tal los dispositivos especiales de bloques y de caracteres presentes en el dispositivo.
+#[mount | /etc/fstab]			auto: Con esta opción hacemos que el dispositivo que la contenga sea iniciado SIEMPRE que se inicie el sistema, es decir, cada vez que este sea encendido.
+#[mount | /etc/fstab]			no auto: Hacemos que el dispositivo no sea montado al iniciarse el sistema, y tan solo será montado en el momento en el que le vayamos a dar uso
+#[mount | /etc/fstab]			user Permite a cualquier usuario del sistema montar o desmontar un dispositivo sin necesidad de ser root, esta opción es muy útil para dispositivos de uso frecuente, como cd-roms o disquetes.
+#[mount | /etc/fstab]			uid=X: Con esta opción indicamos que tan solo el usuario o el grupo con el uid especificado tiene el control sobre los archivos del dispositivo.
+#[mount | /etc/fstab]			async: Con esto hacemos que las operaciones que realicemos no se hagan de forma asíncrona, es decir, en el mismo momento en que las realizamos, si no que pueden ser realizada más adelante.
+#[mount | /etc/fstab]			sync: Con esta opción conseguimos que todas las modificaciones que hagamos sean "in situ" es decir, realizadas en el mismo momento en que sean realizadas.
+
+
+
+blkid o lsblk -f: Comando que nos permite encontrar el UUID.	
+umount dispositivo | punto_montaje: Desmontar un dispositivo por el identificador o por el punto de montaje
+	Ejemplo:
+	umount /dev/sdc1 o umount /mnt/usb
+umount /dev/fd1: El primer ejemplo desmonta la unidad de disquete B.
+umount /mnt/usb: El segundo desmonta el dispositivo que hubiese sido montado en el directorio /mnt/usb
+umount -a: La opción –a permite desmontar todas las unidades
+umount –t vfat: La última opción indica desmontar todas los sistemas montados del tipo vfat.
+
+logger [opciones] [mensajes]: Introduce mensajes en el registro del sistema
+	Ejemplos
+	logger -p local4.notice "Este mensaje es solo un aviso"
+	logger -p local4.warn "Este mensaje es una advertencia"
+
+sudo visudo: Permite editar el archivo /etc/sudoers
+sudo visudo -c: Permite chequear la sintaxis del archivo /etc/sudoers
+sudo visudo -s: Permite activar el modo estricto, no solo comprobara las sintaxis si no tambien el orden correcto de las reglas
+
+hostname -I: Muestra la direccion IP de mi maquina
+hostnamectl: Muestra la informacion del sistema
+hostnamectl set-hostname [name]: Cambia el nombre del host de la maquina
+
+scp [opciones] [origen usuario@IP]:/[directorio y archivo] [destino usuario@IP]:/[destino directorio]: Copiar archivos entre servidores
+[scp] Modificadores
+[scp] –P port numero de puerto, en caso que use un puerto diferente al de por defecto, 22 )
+[scp] –c cipher te da la posibilidad de especificar el algoritmo de cifrado que utilizará el cliente. Algunos de los valores que puedes usar son ‘aes256-ctr’, ‘aes256-cbc’, ‘blowfish-cbc’, ‘arcfour’, ‘arcfour128’, etc.‘La opción predeterminada en la configuración de shell es ‘AnyStdCipher’
+[scp] –q ejecutará la operación en modo silencioso (quiet), solo se mostrarán los errores críticos.
+[scp] –r es para copia recursiva, que incluirá todos los subdirectorios.
+[scp] –4  -6se pueden usar si quieres elegir la versión de protocolo empleada, ya sea IPv4 o IPv6 .
+[scp] –p conservará los tiempos de modificación iniciales y los atributos del archivo.
+[scp] –u borrará el archivo fuente después de que se complete la transferencia.
+[scp] –c permitirá la compresión de los datos mientras se lleva a cabo la operación de transferencia.
+
+scp -pr USUARIO@IP_SERVER_REMOTO:/path/server/remoto /path/server/local
+Ejemplos
+[scp] Copiar archivos de un servidor remoto a local
+scp –P 3625 -pr USUARIO@IP_SERVER_REMOTO:/path/server/remoto /path/server/local  || scp -pr ricardo@192.168.100.97:/home/ricardo/Archivoremoto /home/ricardo/Archivoremoto_copia		
+[scp] Copiar un archivo del servidor local a un servidor remoto
+scp -pr /home/ricardo/nota.txt ricardo@192.168.100.25:/home/ricardo/nota.txt
+[scp] Copiar de un servidor remoto a otro servidor remoto
+scp -3r ricardo@192.168.100.26:/home/ricardo/Notas2 ricardo@192.168.100.27:/home/ricardo/Notas2
+scp -3 opción para realizar la copia entre servidores remotos desde el servidor local
+
+
+ssh-keygen -t rsa: Genera una llave ssh publica y privada entre los servidores
+ssh-copy-id ricardo@192.168.100.26: Envia las claves y contraseñas de server a otro
+ssh -i /home/user/.ssh/id_dsa ricardo@Server2: Conectarse con otro servidor con ssh
+
+last: muestra los usuarios que iniciaron sesion
+utmpdump: wtmp y btmp al ser archivos binarios es necesario interpretarlos para ser leídos. Este programa, utmpdump, proviene del paquete sysvinit-tools y puede usarse para volcar archivos de registro binarios en archivos de formato de texto para su inspección: utmpdump /var/log/wtmp, utmpdump /var/log/btmp.
+
+/*Archivos*/
+/etc/fstab: es una lista de sistemas de archivos que deben montarse en el momento del arranque. Si quieres que tus particiones de Windows o de almacenamiento de archivos se monte una vez que tu ordenador arranque, se tendrá que poner las entradas apropiadas en /etc/fstab.
+
+/etc/mtab es una lista de actualmente sistemas de archivos montados. Si tiene un disco conectado pero no montado, no aparecerá en el  archivo /etc/mtab. Una vez que lo monte, aparecerá allí.
+
+/etc/apt/sources.list lista de repositorios en el sistema
+
+/etc/sudoers: Archivo de configuracion de permisos | Editar con sudo visudo
+
+Ejemplo
+----->[/etc/sudoers]Defaults: ALL timestamp_timeout=0  //Desactivo el "periodo de gracia"
+		
+----->[/etc/sudoers]#User alias specification
+----->[/etc/sudoers]User_Alias PROFESORES = hugo, paco, luis
+----->[/etc/sudoers]User_Alias CREADORES = PROFESORES , !raul
+----->[/etc/sudoers]#Cmnd alias specification
+----->[/etc/sudoers]Cmnd_Alias ALTACUENTAS = /usr/sbin/adduser, /usr/bin/passwd*, /usr/bin/passwd root
+----->[/etc/sudoers]#Permito al grupo CREADORES dar de altas cuentas de usuarios y cambiar el password de ellos pero debe tener [/[/etc/sudoers]prohibido cambiar el password del root
+----->[/etc/sudoers]CREADORES ALL=(ALL) ALTACUENTAS
+----->[/etc/sudoers]Host_Alias WEBHOSTS = 192.168.70.25, \192.168.70.26, \192.168.70.23
+----->[/etc/sudoers]WEBADMINS WEBHOSTS = ADMINHTTPD
+
+
+####ARCHIVOS LOG
+Archivos de configuracion /etc/rsyslog.conf y directorio /etc/rsyslog.d
+/var/log: Almacena los mensajes
+/var/log/kern.log: Almacena información del kernel.
+/var/log/syslog: Almacena los eventos ocurridos en el sistema (demonio rsyslogd).
+/var/log/auth.log: Almacena información sobre los intentos de logueo.
+/var/log/messages: Almacena información sobre los mensajes generales del sistema.
+/var/log/cron.log: registro de crond
+/var/log/maillog: registro del servidor de mails
+/var/log/qmail/ : registro de Qmail
+/var/log/httpd/: registro de errores y accesos a Apache
+/var/log/lighttpd: registro de errores y accesos a Lighttpd
+/var/log/boot.log : registro de inicio del sistema
+/var/log/mysqld.log: registro de la base de datos MySQL
+/var/log/secure: log de autenticación
+/var/log/utmp or /var/log/wtmp : registro de logins
+
+rsyslog.conf: Almacena la configuracion del servicio de logueo
+
+~/.ssh/id_rsa.pub: Almacena la clave publica
+~/.ssh/id_rsa: Almacena la clave privada
+
+----->/etc/ssh/sshd_config: Activar o Desactivar el acceso remoto para el usuario root
+----->[/etc/ssh/sshd_config]nano /etc/ssh/sshd_config
+----->[/etc/ssh/sshd_config]Desactivar
+----->[/etc/ssh/sshd_config]Cambiamos el valor de PermitRootLogin :
+----->[/etc/ssh/sshd_config]PermitRootLogin without-password
+----->[/etc/ssh/sshd_config]Por último, recargamos SSH para que se efectúen los cambios.
+----->[/etc/ssh/sshd_config]service ssh restart
+----->[/etc/ssh/sshd_config]Activar
+----->[/etc/ssh/sshd_config]Cambiamos el valor de PermitRootLogin :
+----->[/etc/ssh/sshd_config]PermitRootLogin yes
+----->[/etc/ssh/sshd_config]Por último, recargamos SSH para que se efectúen los cambios.
+----->[/etc/ssh/sshd_config]service ssh restart
+
+
+----->[bash] Las variables del entorno se definen en /etc/profile, /etc/profile.d/ y ~/.bash_profile. Estos ficheros son de inicialización y son leídos cuando se invoca la bash shell.
+----->[bash]Cuando la login shell sale, la bash lee ~/.bash_logout
+
+/proc es un pseudo-sistema de ficheros que se usa como interfaz para las estructuras de datos del núcleo en lugar de leer e interpretar /dev/kmem. La mayor parte de este sistema de ficheros es de sólo lectura, pero algunos ficheros permiten cambiar variables del núcleo.
+diskstats: Contiene información (incluyendo número de dispositivo) de cada uno de los discos lógicos
+tty: Información sobre las terminales actuales.
+filesystems: Lista de los sistemas de archivos soportados por el kernel en el momento del listado.
+wtmp: archivo binario que guarda información del acceso de usuarios
+btmp: archivo binario que incluye la información de los intentos fallidos
+----> archivado rotativo: el archivo de registro es almacenado regularmente y sólo se mantienen los últimos X archivos
+/etc/logrotate.conf: El programa logrotate es ejecutado diariamente por la aplicación cron
+
+
+
+/*Comandos para instalar paquetes o actualizaciones*/
+apt-get update	Hacemos una actualizacion  
+apt-get upgrade Actualizamos la lista de paquetes
+apt-get install sudo
+
+-----
+Para buscar el último comando ejecutado que contiene una palabra
+determinada podemos presionar la combinación de teclas Ctrl+R
+EJ: (reverse-i-search)`tail': history | tail -n 10
+-----
