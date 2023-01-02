@@ -1,4 +1,4 @@
-# Comandos-Ubuntu-Debian
+# Comandos Ubuntu-Debian
 
 Para ejecutar un script
 
