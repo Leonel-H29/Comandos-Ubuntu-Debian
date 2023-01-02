@@ -1,18 +1,29 @@
-Listas de algunos comandos que se pueden ejecutar en cualquier distribucion basada en Ubuntu o Debian
+Lista de algunos comandos e instrucciones de archivos que se pueden ejecutar en cualquier distribucion basada en Ubuntu o Debian
 
 - Para ver todo el contenido ingrese
 
-    cat comandos.txt
-    
-- Para ver la informacion de un comando especifico, ingrese por consola
+           cat comandos.txt
 
-    grep -ri [clave] comandos.txt
+
+- Para buscar un comando
+    
+    - Para ver la informacion de un comando especifico, ingrese por consola
+
+            grep -ri [clave] comandos.txt
     
     Ejemplo:
     
     ![Screenshot from 2023-01-02 11-54-11](https://user-images.githubusercontent.com/48606307/210247822-01acfc1a-5528-469c-9caa-733cf0d2f999.png)
     
-  Lo que hace este comando es mostrar las lineas de texto que coincidan con el texto, sin diferenciar las mayusculas ni las minusculas
+  Lo que hace este comando es mostrar las lineas de texto que coincidan con el patron ingresado que seria el comando que queremos filtrar (en este caso el comando 'cat'), sin diferenciar las mayusculas ni las minusculas.
+  
+  
+  
+- Para buscar un archivo
+
+    ![Screenshot from 2023-01-02 12-06-23](https://user-images.githubusercontent.com/48606307/210249223-04f9534c-24a6-4b9b-9df2-c57f4e78e225.png)
+
+    Muestra algunos ejemplos de configuraciones que se pueden hacer a dichos archivos, en caso de que dicha informacion pueda encontrarse
 
     
    
