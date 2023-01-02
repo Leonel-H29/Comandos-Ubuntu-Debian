@@ -1,4 +1,7 @@
-Lista de algunos comandos e instrucciones de archivos que se pueden ejecutar en cualquier distribucion basada en Ubuntu o Debian
+# Comandos y Archivos
+
+
+Lista de algunos comandos y configuraciones de archivos que se pueden ejecutar en cualquier distribucion basada en Ubuntu o Debian
 
 - Para ver todo el contenido ingrese
 
