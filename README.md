@@ -1,6 +1,4 @@
 # Comandos-Ubuntu-Debian
-Comandos para distintas operaciones que se pueden hacer en ubuntu o debian
-
 
 Para ejecutar un script
 
