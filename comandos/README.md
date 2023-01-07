@@ -20,6 +20,16 @@ Lista de algunos comandos y configuraciones de archivos que se pueden ejecutar e
     
   Lo que hace este comando es mostrar las lineas de texto que coincidan con el patron ingresado que seria el comando que queremos filtrar (en este caso el comando 'cat'), sin diferenciar las mayusculas ni las minusculas.
   
+   - Otra opcion seria
+   
+           cat comandos.txt | grep [clave]
+           
+   Ejemplo
+   
+   ![Captura de pantalla de 2023-01-07 11-05-54](https://user-images.githubusercontent.com/48606307/211154841-e1a372a1-75c3-4a86-a028-da43043dbece.png)
+
+   
+   Utilizando tuberias, el contenido del archivo se enviara a la entrada de grep para filtrar las filas que coincidan con dicho comando
   
   
 - Para buscar un archivo
