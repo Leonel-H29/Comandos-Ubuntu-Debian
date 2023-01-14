@@ -46,38 +46,75 @@ escribirla cada vez que se utilice.
 Almacenar las claves y la contraseña Deberíamos ver en pantalla algo parecido a esto:
 
 
-sh-keygen -t rsa
-Generating public/private rsa key pair.
-Enter file in which to save the key (/home/ricardo/.ssh/id_rsa):
-Enter passphrase (empty for no passphrase):
-Enter same passphrase again:
-Your identification has been saved in /home/ricardo/.ssh/id_rsa.
-Your public key has been saved in /home/ricardo/.ssh/id_rsa.pub.
-The key fingerprint is:
-SHA256:uY4tYpRCgN05mfWtIvDsayoitge4cjNR2JdIEA1euSg ricardo@debian-Stretch
-The key's randomart image is:
-+---[RSA 2048]----+
-|..+*.*.
-|
-|o...X . .
-|
-| .o= + .. .
-|
-|E ++= o o
-|
-|.o .+o. S
-|
-|..o.o. . .
-|
-| ..+. .
-|
-|*.+.+..+
-|
-|=++*....o
-|
-+----[SHA256]-----+
+		sh-keygen -t rsa
+
+		Generating public/private rsa key pair.
+
+		Enter file in which to save the key (/home/username/.ssh/id_rsa):
+
+		Enter passphrase (empty for no passphrase):
+
+		Enter same passphrase again:
+
+		Your identification has been saved in /home/username/.ssh/id_rsa.
+
+		Your public key has been saved in /home/username/.ssh/id_rsa.pub.
+
+		The key fingerprint is:
+
+		SHA256:uY4tYpRCgN05mfWtIvDsayoitge4cjNR2JdIEA1euSg username@debian-Stretch
+
+		The key's randomart image is:
+		+---[RSA 2048]----+
+		|..+*.*.
+		|
+		|o...X . .
+		|
+		| .o= + .. .
+		|
+		|E ++= o o
+		|
+		|.o .+o. S
+		|
+		|..o.o. . .
+		|
+		| ..+. .
+		|
+		|*.+.+..+
+		|
+		|=++*....o
+		|
+		+----[SHA256]-----+
 
 
 
 La clave pública se guardará en «/home/username/.ssh/id_rsa.pub», mientras que la clave privada lo
 hará en «/home/username/.ssh/id_rsa».
+
+
+
+
+
+**Una vez creadas debera copiar la clave publica en GitHub | GitLab | Bitbutcket para crear las llaves y realizar una conexion por SSH.**
+
+### Agregar clave a nuestro agente SSH
+
+El agente ssh (ssh-agent) es un programa auxiliar que realiza un seguimiento de las claves de identidad del usuario y sus frases de contraseña. El agente puede usar las claves para iniciar sesión en otros servidores sin que el usuario escriba una contraseña o frase de contraseña nuevamente. Esto implementa una forma de inicio de sesión único (SSO).
+
+El agente SSH se utiliza para la autenticación de clave pública SSH. Utiliza claves SSH para la autenticación. Los usuarios pueden crear claves SSH con el comando ssh-keygen e instalarlas en los servidores con el comando ssh-copy-id. (Lo que viene siendo un intercambio de llaves)
+
+Podemos decir que se trata de un programa para contener claves privadas, utilizadas para la autenticación de claves públicas (RSA, DSA, ECDSA, Ed25519). ssh-agent generalmente se inicia en el comienzo de una sesión X o una sesión de inicio de sesión, y todas las demás ventanas o programas se inician como clientes del programa ssh-agent. Mediante el uso de variables de entorno en las que el agente puede ubicarse y usarse automáticamente para autenticación al iniciar sesión en otras máquinas con ssh.
+
+Para iniciar ese agente
+
+		eval $(ssh-agent -s)
+		
+A partir de aqui se pueden agregar claves
+
+		ssh-add /home/username/.ssh/id_rsa
+
+Ingresas la contraseña en caso de que le hayas puesto una, y ya se encontrara automaticamente registrado. 
+
+**¡¡¡Ya con esto puedes usar git con SSH!!!**
+
+
