@@ -12,7 +12,7 @@ Linux/GNU Linux basadas en Ubuntu o Debian.
 La idea es ayudar tanto a las personas que recien comienzan a utilizar Linux como a las personas avanzadas para la automatizacion de tareas rutinarias,
 complejas o repetitivas.
 
-### Cualquier persona con deseo de colaborar es bienvenida :D
+### Cualquier persona con deseo de colaborar con este proyecto, sientase libre de poder hacerlo :D
 
 
 
