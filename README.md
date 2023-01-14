@@ -1,6 +1,29 @@
-# Comandos Ubuntu-Debian
+# Comandos y Scripts para distribuciones Ubuntu/Debian (SHELL)
 
-Para ejecutar un script
+## ¡Bienvenidos! :D
+
+![Hands-on-Introduction-to-Linux_Final](https://user-images.githubusercontent.com/48606307/212501298-04f89397-760b-435f-b533-ce23b1d54967.png)
+
+
+En este repositorio Open Source se podran encontrar archivos ejecutables para automatizacion de tareas, ademas de la
+explicacion de los comandos utilizados para distintas operaciones que se pueden hacer en distribuciones 
+Linux/GNU Linux basadas en Ubuntu o Debian.
+
+La idea es ayudar tanto a las personas que recien comienzan a utilizar Linux como a las personas avanzadas para la automatizacion de tareas rutinarias,
+complejas o repetitivas.
+
+### Cualquier persona con deseo de colaborar es bienvenida :D
+
+
+
+
+
+
+
+
+
+
+## Para ejecutar un script
 
 1 - Se debe posicionar en el directorio de dicho archivo
 
