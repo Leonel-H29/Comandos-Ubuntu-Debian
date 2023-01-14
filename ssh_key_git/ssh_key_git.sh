@@ -1,7 +1,7 @@
 #!/bin/bash
 
 echo "Creando clave ssh."
-ssh_keygen
+ssh-keygen -t rsa
 
 read -t 3 -p "Espere unos segundos..."
 
