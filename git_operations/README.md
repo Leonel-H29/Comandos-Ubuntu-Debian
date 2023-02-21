@@ -12,7 +12,7 @@ Para realizar el commit existen varias formas, la mas simple consiste en la sigu
 
 		git commit -m "Nueva modificacion ..."
 
-Con creo el commit y la opcion '-m' permite agregar en mensaje en la misma linea
+Con este comando creo el commit y la opcion '-m' permite agregar en mensaje en la misma linea
 
 Para ver si se ha creado el commit, la forma mas comun es escribir:
 
