@@ -1,6 +1,6 @@
 # OPERACIONES EN GIT
 
-## Agregar a todos los cambios realizados en todos los  archivos
+## Agregar todos los cambios realizados en todos los archivos
 
 Si estas seguro de querer subir todas las modifidicaciones realizadas en todos los archivos se debe escribir el siguiente comando :
 
