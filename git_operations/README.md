@@ -18,7 +18,11 @@ Para ver si se ha creado el commit, la forma mas comun es escribir:
 
 		git log
 
-Con este comando se muestran todos los commits realizados en la rama, el que se encuentra al principio es el ultimo realizado.
+Con este comando se muestran todos los commits realizados en la rama, el que se encuentra al principio es el ultimo realizado. Otra altervativa seria ingresar este comando con la opcion '-1':
+
+		git log -1
+
+Esta opcion muestra la informacion del ultimo commit realizado
 
 
 Antes de subir los cambios debe saber en que rama esta ubicado, una forma de saberlo es utilizando
