@@ -1,6 +1,7 @@
 # Comandos y Scripts para distribuciones Ubuntu/Debian (SHELL)
 
-## ¡Bienvenidos! :D
+## ¡Bienvenidos! 😊
+
 
 ![Hands-on-Introduction-to-Linux_Final](https://user-images.githubusercontent.com/48606307/212501298-04f89397-760b-435f-b533-ce23b1d54967.png)
 
@@ -12,7 +13,7 @@ Linux/GNU Linux basadas en Ubuntu o Debian.
 La idea es ayudar tanto a las personas que recien comienzan a utilizar Linux como a las personas avanzadas para la automatizacion de tareas rutinarias,
 complejas o repetitivas.
 
-### Cualquier persona con deseo de colaborar con este proyecto, sientase libre de poder hacerlo :D
+### Cualquier persona con deseo de colaborar con este proyecto, sientase libre de poder hacerlo :grin: 😎
 
 
 
@@ -66,9 +67,9 @@ Para agregar un alias debera editar el archivo /home/$USER/.bash_aliases, para e
 	
 		nano /home/$USER/.bash_aliases
 		
-		Y debe agregar un alias personalizado teniendo en cuenta el directorio donde se encuentra el script
+	Y debe agregar un alias personalizado teniendo en cuenta el directorio donde se encuentra el script
 		
-		En este caso suponemos que se encuentra en el directorio de documentos del usuario 
+	En este caso suponemos que se encuentra en el directorio de documentos del usuario 
 		
 		alias hola="bash /home/$USER/Documents/hola.sh"
  
