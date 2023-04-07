@@ -70,11 +70,11 @@ Para agregar un alias debera editar el archivo /home/$USER/.bash_aliases, para e
 		
 		En este caso suponemos que se encuentra en el directorio de documentos del usuario 
 		
-		alias hola="bash /home/user/Documents/hola.sh"
+		alias hola="bash /home/$USER/Documents/hola.sh"
  
 	2 - Abrir la terminal y escribir el siguiente comando
 	
-		echo "alias hola='bash /home/user/Documents/hola.sh'" >> /home/$USER/.bash_aliases
+		echo "alias hola='bash /home/$USER/Documents/hola.sh'" >> /home/$USER/.bash_aliases
 	
 	Esto lo que hara es redireccionar la salida al archivo /home/$USER/.bash_aliases agregando el alias desde la ultima linea que posea el archivo
 	
@@ -84,6 +84,6 @@ Para agregar un alias debera editar el archivo /home/$USER/.bash_aliases, para e
 		source ~/.bashrc
 
 
-Ya con esto para utilizar el alias "hola", simplemente escribe "hola" en la terminal y presiona enter. Esto ejecutará el comando "bash" en el directorio "/home/user/Documents/hola.sh" y se ejecutara el script que se encuentra en ese directorio. Por lo tanto, no necesitas escribir la ruta completa cada vez que quieras ir al directorio y ejecutar el script. En lugar de eso, solo necesitas escribir el alias "hola" en este caso.
+Ya con esto para utilizar el alias "hola", simplemente escribe "hola" en la terminal y presiona enter. Esto ejecutará el comando "bash" en el directorio "/home/$USER/Documents/" y se ejecutara el script "hola.sh" que se encuentra en ese directorio. Por lo tanto, no necesitas escribir la ruta completa cada vez que quieras ir al directorio y ejecutar el script. En lugar de eso, solo necesitas escribir el alias "hola" en este caso.
 		
 		  
