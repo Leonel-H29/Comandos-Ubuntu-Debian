@@ -1,5 +1,10 @@
 # PONER LAS PÁGINAS MAN EN ESPAÑOL
 
+En este directorio se presentaran alternativas para poder traducir el manual 'man' del Ingles al Español
+
+
+## 1) - manpages-es 
+
 Si queremos obtener las instrucciones en Español hay que instalar los paquetes manpages-es y manpages-es-extra. Para ello tenemos que 
 ejecutar el siguiente comando en la terminal:
 
@@ -42,6 +47,32 @@ Veremos que ya tenemos el contenido de las páginas man en Español.
 
 1. Existen muchas paginas en las que no se pueden traducir al Español
 2. Existen otras en las que se pueden encontrar obsoletas o contienen errores
+
+
+## 2) translate-shell
+
+Para instalar translate-shell, puede usar el siguiente comando:
+
+
+		sudo apt-get install translate-shell
+
+Si está utilizando otra distribución de Linux, consulte la documentación de su sistema operativo para obtener instrucciones sobre cómo instalar estas herramientas.
+
+
+Luego la linea
+		trans -f en -t es "$manES"
+		
+
+Permitira traducir el contenido del manual de un comando especifico, y al final mostrara por pantalla el texto original y el traducido
+
+
+	Por ejemplo aca busco el manual del comando 'clear'
+	
+	
+
+
+
+
 
 ### CONSEJO
 
