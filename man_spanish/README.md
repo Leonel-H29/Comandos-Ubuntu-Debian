@@ -48,6 +48,8 @@ Veremos que ya tenemos el contenido de las páginas man en Español.
 1. Existen muchas paginas en las que no se pueden traducir al Español
 2. Existen otras en las que se pueden encontrar obsoletas o contienen errores
 
+Fuente: [LINK DEL MANUAL](https://geekland.eu/poner-paginas-man-en-espanol-en-linux/#:~:text=En%20el%20momento%20de%20ejecutar,configuraci%C3%B3n%20regional%20que%20deseamos%20generar)
+
 
 ## 2) translate-shell
 
@@ -60,6 +62,7 @@ Si está utilizando otra distribución de Linux, consulte la documentación de s
 
 
 Luego la linea
+
 		trans -f en -t es "$manES"
 		
 
@@ -68,7 +71,8 @@ Permitira traducir el contenido del manual de un comando especifico, y al final 
 
 	Por ejemplo aca busco el manual del comando 'clear'
 	
-	![Screenshot from 2023-04-07 12-28-08](https://user-images.githubusercontent.com/48606307/230636913-ffe65670-d559-48ac-8a4f-1b5b71cdf52f.png)
+
+![Screenshot from 2023-04-07 12-28-08](https://user-images.githubusercontent.com/48606307/230636913-ffe65670-d559-48ac-8a4f-1b5b71cdf52f.png)
 
 
 
@@ -77,7 +81,7 @@ Permitira traducir el contenido del manual de un comando especifico, y al final 
 
 ### CONSEJO
 
-Si dominan el inglés es mejor que no utilicen las páginas en Español.
+Si dominan el inglés no utilicen las páginas en Español.
 
 
-Fuente: https://geekland.eu/poner-paginas-man-en-espanol-en-linux/#:~:text=En%20el%20momento%20de%20ejecutar,configuraci%C3%B3n%20regional%20que%20deseamos%20generar
+
