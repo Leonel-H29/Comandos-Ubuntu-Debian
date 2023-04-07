@@ -68,7 +68,8 @@ Permitira traducir el contenido del manual de un comando especifico, y al final 
 
 	Por ejemplo aca busco el manual del comando 'clear'
 	
-	
+	![Screenshot from 2023-04-07 12-28-08](https://user-images.githubusercontent.com/48606307/230636913-ffe65670-d559-48ac-8a4f-1b5b71cdf52f.png)
+
 
 
 
