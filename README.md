@@ -74,7 +74,7 @@ Para agregar un alias debera editar el archivo /home/$USER/.bash_aliases, para e
  
 	2 - Abrir la terminal y escribir el siguiente comando
 	
-		echo "alias hola="bash /home/user/Documents/hola.sh" >> /home/$USER/.bash_aliases
+		echo "alias hola='bash /home/user/Documents/hola.sh'" >> /home/$USER/.bash_aliases
 	
 	Esto lo que hara es redireccionar la salida al archivo /home/$USER/.bash_aliases agregando el alias desde la ultima linea que posea el archivo
 	
