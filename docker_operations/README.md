@@ -1,6 +1,6 @@
-# Repositorio de Scripts de Instalación con Docker
+# Operaciones Docker
 
-Este repositorio contiene una serie de scripts de instalación diseñados para facilitar la configuración de entornos de desarrollo en diferentes distribuciones de Linux utilizando Docker.
+Este repositorio contiene una serie de scripts de instalación y otras operaciones diseñados para facilitar la configuración de entornos de desarrollo en diferentes distribuciones de Linux utilizando Docker.
 
 ## ¿Qué es Docker?
 
