@@ -1,4 +1,4 @@
-# Operaciones Docker
+# Operaciones con Docker
 
 Este repositorio contiene una serie de scripts de instalación y otras operaciones diseñados para facilitar la configuración de entornos de desarrollo en diferentes distribuciones de Linux utilizando Docker.
 
